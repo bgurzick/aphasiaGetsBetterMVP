@@ -16,7 +16,7 @@ const ProfileForm = ({ onSubmit, initialValues }) => {
         event.preventDefault();
         try {
           const response = await   
-     axios.post('/api/user_profiles/create', formData);
+     axios.post('http://localhost:3000/api/user_profiles/create', formData);
           setIsSubmitted(true);
           setFormData(response.data);
           // update form data with new user data
@@ -29,7 +29,7 @@ const ProfileForm = ({ onSubmit, initialValues }) => {
     
       const handleDefaultUser = async () => {
         try {
-          const response = await axios.get('/api/user_profiles/66a85496907bd373126aadd6');
+          const response = await axios.get('http://localhost:3000/api/user_profiles/66a85496907bd373126aadd6');
           const data = response.data;
           setFormData(data);
         } catch (error) {

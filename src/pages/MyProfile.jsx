@@ -15,7 +15,7 @@ const MyProfile = () => {
   //uses fetch to send a POST request
   const handleFormSubmit = async (formData) => {
     try {
-      const response = await fetch('/api/user_profiles/create', {
+      const response = await fetch('http://localhost:3000/api/user_profiles/create', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),

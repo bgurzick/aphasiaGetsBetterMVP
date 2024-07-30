@@ -116,7 +116,7 @@ const ProfileForm = ({ onSubmit, initialValues }) => {
       <br />
 
       <button type="submit">register</button>
-      <button type="button" onClick={handleDefaultUser}>use default</button>
+      <button type="button" onClick={handleDefaultUser}>default user</button>
       {isSubmitted && (
         <pre>{JSON.stringify(formData, null, 2)}</pre>
       )}

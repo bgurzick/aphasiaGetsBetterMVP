@@ -12,7 +12,7 @@ APHASIA GETS BETTER
 - In simpler terms: It makes sense to practice speech that you'll actually use in your daily life.
 
 MY 4 PAGES
-- My Profile: the first page is the registration page which creates a new user or else utilizes a default user profile.
+- My Profile: the first page is the registration page which creates a new user or else utilizes a default user profile. There are update and delete options that aren't yet fully functional.
 
 - Daily Schedule: this page will hopefully be a useful organizational tool for the user, which is both a good cognitive exercise and a way of keeping them engaged with the website
 

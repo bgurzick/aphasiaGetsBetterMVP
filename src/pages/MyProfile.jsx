@@ -38,7 +38,7 @@ const MyProfile = () => {
 
   return (
     <div>
-      <h1>My Profile</h1>
+      <h1>my profile</h1>
       <ProfileForm onSubmit={handleFormSubmit} initialValues={userProfile} />
     </div>
   );

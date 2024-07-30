@@ -122,8 +122,8 @@ function DailySchedule() {
  
   return (
     <div className="container">
-      <h1>To-Do List</h1>
-      <h2>Today is <span id="currentDate"></span></h2>
+      <h1>daily schedule</h1>
+      <h2>today is <span id="currentDate"></span></h2>
       {error ? (
         <p>Error fetching weather: {error}</p>
       ) : weather ? (

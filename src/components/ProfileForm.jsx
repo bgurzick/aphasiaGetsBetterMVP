@@ -26,7 +26,9 @@ const ProfileForm = ({ onSubmit, initialValues }) => {
           
         }
       };
+
     
+
       const handleDefaultUser = async () => {
         try {
           const response = await axios.get('http://localhost:3000/api/user_profiles/66a85496907bd373126aadd6');

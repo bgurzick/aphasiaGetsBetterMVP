@@ -31,15 +31,59 @@ const MyProfile = () => {
         console.error('error creating user profile:', data.error);
       }
     } catch (error) {
-      console.error('Error creating user profile:', error);
+      console.error('error creating user profile:', error);
     }
   };
 
+//update user
+const handleUpdateUser = async () => {
+  if (!userProfile._id) {
+    console.error('User profile not loaded. Cannot update.');
+    return;
+  }
+
+  try {
+    const response = await axios.put(`http://localhost:3000/api/user_profiles/${userProfile._id}`, userProfile);
+
+    if (response.status === 200) {
+      setUserProfile(response.data); // Update state with updated profile data
+      console.log('User profile updated successfully');
+    } else {
+      console.error('Error updating user profile:', response.data.error);
+    }
+  } catch (error) {
+    console.error('Error updating user profile:', error);
+  }
+};
+
+//delete user
+  const handleDeleteUser = async () => {
+    if (window.confirm('are you sure you want to delete your profile?')) {
+      try {
+        const response = await axios.delete(`http://localhost:3000/api/user_profiles/${userProfile._id}`);
+
+        if (response.status === 200) {
+          setUserProfile(); // reset user profile state
+          console.log('user profile deleted successfully');
+        } else {
+          console.error('error deleting user profile:', response.data.error);
+        }
+      } catch (error) {
+        console.error('error deleting user profile:', error);
+      }
+    }
+  };
 
   return (
     <div>
       <h1>my profile</h1>
       <ProfileForm onSubmit={handleFormSubmit} initialValues={userProfile} />
+      <button type="button" onClick={handleUpdateUser} disabled={!userProfile._id}>
+        update user
+      </button>
+        <button type="button" onClick={handleDeleteUser} disabled={!userProfile._id}>
+        delete user
+      </button>
     </div>
   );
 };

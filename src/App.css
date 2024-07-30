@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'DIN Bold';
-  src: url(../IMG/kexpInteractiveProtoFonts/DIN/DINBold.ttf);
+  src: url(../src/assets/fonts/DIN/DINBold.ttf);
 }
 
 body {

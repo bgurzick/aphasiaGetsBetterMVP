@@ -3,7 +3,7 @@ CAPSTONE PROJECT
 
 APHASIA GETS BETTER
 
-- Aphasia is a communication disorder that is most commonlly caused by stroke.
+- Aphasia is a communication disorder that is most commonly caused by stroke.
 - Between 1 and 2 million people live with Aphasia in the United States.
 - For people with moderate to severe aphasia, traditional speech therapy presents diminishing returns after the second year.
 

@@ -1,20 +1,50 @@
 
 import React, { useState } from 'react';
+import axios from 'axios';
 
 //use initial values
 const ProfileForm = ({ onSubmit, initialValues }) => {
-  const [formData, setFormData] = useState(initialValues); 
+    const [formData, setFormData] = useState(initialValues);
+    const [isSubmitted, setIsSubmitted] = useState(false);
+    const [defaultUser, setDefaultUser] = useState(null);
+  
+    const handleChange = (event) => {
+        setFormData({ ...formData, [event.target.name]: event.target.value });
+      };
+    
+      const handleSubmit = async (event) => {
+        event.preventDefault();
+        try {
+          const response = await   
+     axios.post('/api/user_profiles/create', formData);
+          setIsSubmitted(true);
+          setFormData(response.data);
+          // update form data with new user data
 
+        } catch (error) {
+          console.error('Error creating user profile:', error);
+          
+        }
+      };
+    
+      const handleDefaultUser = async () => {
+        try {
+          const response = await axios.get('/api/user_profiles/66a85496907bd373126aadd6');
+          const data = response.data;
+          setFormData(data);
+        } catch (error) {
+          console.error('Error fetching default user:', error);
+          
+        }
+      };
+    
+      // fetch default user data if initialValues is empty
+      useEffect(() => {
+        if (Object.keys(initialValues).length === 0) {
+          handleDefaultUser();
+        }
+      }, []);
 
-  const handleChange = (event) => {
-    setFormData({ ...formData, [event.target.name]: event.target.value });
-  };
-
-//handler function prevents default, calls onSubmit prop
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    onSubmit(formData);   
-  };
 
   return (
     <form onSubmit={handleSubmit}>
@@ -85,6 +115,10 @@ const ProfileForm = ({ onSubmit, initialValues }) => {
       <br />
 
       <button type="submit">Register</button>
+      <button type="button" onClick={handleDefaultUser}>Use Default</button>
+      {isSubmitted && (
+        <pre>{JSON.stringify(formData, null, 2)}</pre>
+      )}
     </form>
   );
 };

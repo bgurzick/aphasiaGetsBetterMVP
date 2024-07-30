@@ -1,29 +1,35 @@
-
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
 
 const CurrentTemperature = () => {
   const [temperature, setTemperature] = useState(null);
   const [location, setLocation] = useState(null);
 
-  
+  // function to get the user's location
+  const getUserLocation = () => {
+    return new Promise((resolve, reject) => {
+      navigator.geolocation.getCurrentPosition(
+        (position) => resolve({ lat: position.coords.latitude, lon: position.coords.longitude }),
+        (error) => reject(error)
+      );
+    });
+  };
+
   useEffect(() => {
     const fetchTemperature = async () => {
-      
-      const { lat, lon } = getUserLocation(); 
-
-      if (!lat || !lon) {
-        console.error('User location not available');
-        return;
-      }
-
       try {
+        const { lat, lon } = await getUserLocation(); 
+
+        if (!lat || !lon) {
+          console.error('User location not available');
+          return;
+        }
+
         const { data } = await axios.get('https://api.openweathermap.org/data/2.5/weather', {
           params: {
             lat,
             lon,
-            appid: process.env.OPENWEATHER_API_KEY, 
+            appid: import.meta.env.VITE_OPENWEATHER_API_KEY,
             units: 'imperial',
           },
         });
@@ -51,7 +57,5 @@ const CurrentTemperature = () => {
     </p>
   );
 };
-
-
 
 export default CurrentTemperature;

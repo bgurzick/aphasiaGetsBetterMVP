@@ -20,7 +20,7 @@ const DailySchedule = () => {
     <div className="container">
       <h1>daily schedule</h1>
       <div>
-        <h2>Today is <span id="currentDate">{currentDate}</span></h2>
+        <h2>today is <span id="currentDate">{currentDate}</span></h2>
         <CurrentTemperature />
         <ToDoList />
       </div>

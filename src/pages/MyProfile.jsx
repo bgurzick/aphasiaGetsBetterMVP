@@ -38,7 +38,7 @@ const MyProfile = () => {
 //update user
 const handleUpdateUser = async () => {
   if (!userProfile._id) {
-    console.error('User profile not loaded. Cannot update.');
+    console.error('user profile not loaded. cannot update.');
     return;
   }
 
@@ -47,12 +47,12 @@ const handleUpdateUser = async () => {
 
     if (response.status === 200) {
       setUserProfile(response.data); // Update state with updated profile data
-      console.log('User profile updated successfully');
+      console.log('user profile updated successfully');
     } else {
-      console.error('Error updating user profile:', response.data.error);
+      console.error('error updating user profile:', response.data.error);
     }
   } catch (error) {
-    console.error('Error updating user profile:', error);
+    console.error('error updating user profile:', error);
   }
 };
 

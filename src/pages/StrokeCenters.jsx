@@ -17,8 +17,8 @@ const StrokeCenters = () => {
 
   return (
     <div>
-      <h1>Certified Stroke Centers</h1>
-      <p>Note: This list may not be up to date.</p>
+      <h1>certified stroke centers</h1>
+      <p>please note: this list may not be up to date.</p>
       <form onSubmit={handleSubmit}>
         <input type="text" placeholder="Type the name of your state" value={state} onChange={(e) => setState(e.target.value)} />
         <button type="submit">submit</button>

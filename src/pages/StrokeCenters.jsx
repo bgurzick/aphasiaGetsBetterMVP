@@ -7,7 +7,7 @@ const StrokeCenters = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await fetch(`/api/stroke_centers/state/${state}`);
+      const response = await fetch(`http://localhost:3000/api/stroke_centers/state/${state}`);
       const data = await response.json();
       setCenters(data);
     } catch (error) {

@@ -11,7 +11,7 @@ const SpeechPractice = () => {
   useEffect(() => {
     const fetchUserProfile = async () => {
       try {
-        const response = await axios.get('/api/user_profiles/66a85496907bd373126aadd6'); 
+        const response = await axios.get('http://localhost:3000/api/user_profiles/66a85496907bd373126aadd6'); 
         const data = response.data;
         setUserProfile(data[0]);
       } catch (error) {

@@ -48,7 +48,7 @@ const ProfileForm = ({ onSubmit, initialValues }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label htmlFor="name">Name:</label>
+      <label htmlFor="name">name:</label>
       <input
         type="text"
         id="name"
@@ -59,7 +59,7 @@ const ProfileForm = ({ onSubmit, initialValues }) => {
       />
       <br />
 
-      <label htmlFor="email">Email:</label>
+      <label htmlFor="email">email:</label>
       <input
         type="email"
         id="email"
@@ -70,7 +70,7 @@ const ProfileForm = ({ onSubmit, initialValues }) => {
       />
       <br />
 
-      <label htmlFor="currentCity">Current City:</label>
+      <label htmlFor="currentCity">current city:</label>
       <input
         type="text"
         id="currentCity"
@@ -80,7 +80,7 @@ const ProfileForm = ({ onSubmit, initialValues }) => {
       />
       <br />
 
-      <label htmlFor="hometown">Hometown:</label>
+      <label htmlFor="hometown">hometown:</label>
       <input
         type="text"
         id="hometown"
@@ -90,7 +90,7 @@ const ProfileForm = ({ onSubmit, initialValues }) => {
       />
       <br />
 
-      <label htmlFor="siblings">Siblings (comma separated):</label>
+      <label htmlFor="siblings">siblings (use commas):</label>
       <input
         type="text"
         id="siblings"
@@ -102,7 +102,7 @@ const ProfileForm = ({ onSubmit, initialValues }) => {
       />
       <br />
 
-      <label htmlFor="bestFriends">Best Friends (comma separated):</label>
+      <label htmlFor="bestFriends">best friends (use commas):</label>
       <input
         type="text"
         id="bestFriends"
@@ -114,8 +114,8 @@ const ProfileForm = ({ onSubmit, initialValues }) => {
       />
       <br />
 
-      <button type="submit">Register</button>
-      <button type="button" onClick={handleDefaultUser}>Use Default</button>
+      <button type="submit">register</button>
+      <button type="button" onClick={handleDefaultUser}>use default</button>
       {isSubmitted && (
         <pre>{JSON.stringify(formData, null, 2)}</pre>
       )}

@@ -28,3 +28,5 @@ FRUSTRATIONS AND FUTURE PLANS
 
 OTHER NOTES
 - While still a work in progress, I've been thinking about accessibility the whole way through: high contrast color scheme, large print, extra line spacing and so on, for readability. As I continue to develop on-screen content, I will bear in mind the impaired visual attention of many people living with aphasia.
+
+- The user profiles have full CRUD routes built. My aim is to make it so that the user can edit their own profile information on the frontend: add friends, change cities, delete siblings (just kidding), for the benfit of the dynamic speech therapy prompts.

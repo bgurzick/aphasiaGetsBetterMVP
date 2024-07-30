@@ -20,7 +20,6 @@ const ToDoList = () => {
 
   return (
     <div className="container">
-      <h2>To-Do List</h2>
       <ul>
         {todos.map((todo, index) => (
           <li key={index}>

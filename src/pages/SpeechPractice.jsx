@@ -1,68 +1,42 @@
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-function SpeechPractice() {
-  const [userProfile, setUserProfile] = useState(null);
-  const [sentences, setSentences] = useState([]);
+//creating dynamic sentences, info filled with user_profile data
+const SpeechPractice = () => {
+  const [userProfile, setUserProfile] = useState({});
+  const sentences = [
+    `I live in ${userProfile.currentCity || 'a wonderful city'}.`,
+    `I grew up in ${userProfile.hometown || 'a charming town'}.`,
+    `${userProfile.siblings?.[0] || 'Someone special'} is my sibling.`,
+    `Have you met my friend ${userProfile.bestFriends?.[0] || 'a great friend'}?`,
+    `${userProfile.bestFriends?.[1] || 'A close friend'} and I went to the movies.`,
+  ];
 
   useEffect(() => {
     const fetchUserProfile = async () => {
       try {
-        const response = await axios.get('/api/users/me');
-        setUserProfile(response.data);
+        const response = await axios.get('/api/user_profiles/66a85496907bd373126aadd6'); 
+        const data = response.data;
+        setUserProfile(data[0]);
       } catch (error) {
-        console.error(error);
+        console.error('Error fetching user profile:', error);
       }
     };
 
     fetchUserProfile();
   }, []);
 
-  useEffect(() => {
-    if (userProfile) {
-      generateSentences(userProfile);
-    }
-  }, [userProfile]);
-
-    // generate sentences based on user profile data
-  const generateSentences = (userProfile) => {
-  
-    const { name, siblings, bestFriends } = userProfile;
-    const sentenceTemplates = [
-      `Where is ${siblings[0]}?`,
-      `What did you do with ${bestFriends[0]} yesterday?`,
-      `Tell me about ${name}'s favorite hobby.`,
-    
-    ];
-
-    const generatedSentences = sentenceTemplates.map(template => {
-      const sentence = template.replace(/\${(\w+)}/g, (match, key) => userProfile[key]);
-      return sentence;
-    });
-
-    setSentences(generatedSentences);
-  };
-
-  const handleSaveSentence = async (sentence) => {
-    try {
-      const response = await axios.post('/api/users/save-sentence', { sentence, userId: userProfile._id }); 
-      
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
   return (
     <div>
       <h1>Speech Practice</h1>
-      {sentences.map((sentence, index) => (
-        <div key={index}>
-          {sentence}
-          <button onClick={() => handleSaveSentence(sentence)}>Save Sentence</button>
-        </div>
-      ))}
+      <ul style={{ lineHeight: '1.5' }}>
+        {sentences.map((sentence, index) => (
+          <li key={index}>{sentence}</li>
+        ))}
+      </ul>
     </div>
   );
-}
+};
 
 export default SpeechPractice;

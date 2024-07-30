@@ -3,20 +3,23 @@
   src: url(../src/assets/fonts/DIN/DINBold.ttf);
 }
 
-body {
+/* body {
     font-family: 'DIN Bold';
     background-color: white;
     color: black;
     line-height: 1.6;
-}
+} */
 
 .header {
   background-color: #ffffff;
   padding-top: 20px;
   text-align: center;
+  /* font-family: 'DIN Bold'; */
+  /* color: black; */
 }
 
 .header-title {
+ 
   font-size: 32px;
 }
 

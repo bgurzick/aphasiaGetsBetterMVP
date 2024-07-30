@@ -13,7 +13,7 @@ function App() {
       <Router>
         <Layout>
           <Routes>
-            <Route path="/" element={<MyProfile />} />
+            <Route path="/my-profile" element={<MyProfile />} />
             <Route path="/daily-schedule" element={<DailySchedule />} />
             <Route path="/speech-practice" element={<SpeechPractice />} />
             <Route path="/stroke-centers" element={<StrokeCenters />} />

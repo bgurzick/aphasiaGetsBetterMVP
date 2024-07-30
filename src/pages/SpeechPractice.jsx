@@ -3,14 +3,15 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 //creating dynamic sentences, info filled with user_profile data
+//with OR operator in case the API doesn't fetch correclty
 const SpeechPractice = () => {
   const [userProfile, setUserProfile] = useState({});
   const sentences = [
-    `I live in ${userProfile.currentCity || 'a wonderful city'}.`,
+    `I live in ${userProfile.currentCity || 'a great city'}.`,
     `I grew up in ${userProfile.hometown || 'a charming town'}.`,
-    `${userProfile.siblings?.[0] || 'Someone special'} is my sibling.`,
-    `Have you met my friend ${userProfile.bestFriends?.[0] || 'a great friend'}?`,
-    `${userProfile.bestFriends?.[1] || 'A close friend'} and I went to the movies.`,
+    `${userProfile.siblings?.[0] || 'That'} is my sibling.`,
+    `Have you met ${userProfile.bestFriends?.[0] || 'them'}, my friend?`,
+    `${userProfile.bestFriends?.[1] || 'My friend'} and I went to the movies.`,
   ];
 
   useEffect(() => {
@@ -27,16 +28,25 @@ const SpeechPractice = () => {
     fetchUserProfile();
   }, []);
 
+  //utilizing Web Speech API for text-to-speech
+  const handleSpeak = (text) => {
+    const utterance = new SpeechSynthesisUtterance(text);
+    window.speechSynthesis.speak(utterance);
+  };
+
+
   return (
     <div>
       <h1>Speech Practice</h1>
-      <ul style={{ lineHeight: '1.5' }}>
+      <ul style={{ lineHeight: '5' }}>
         {sentences.map((sentence, index) => (
-          <li key={index}>{sentence}</li>
+          <li key={index} onClick={() => handleSpeak(sentence)}>{sentence}</li>
         ))}
       </ul>
     </div>
   );
 };
+
+
 
 export default SpeechPractice;

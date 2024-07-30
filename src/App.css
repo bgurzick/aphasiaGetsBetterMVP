@@ -3,12 +3,12 @@
   src: url(../src/assets/fonts/DIN/DINBold.ttf);
 }
 
-/* body {
+body {
     font-family: 'DIN Bold';
     background-color: white;
     color: black;
     line-height: 1.6;
-} */
+}
 
 .header {
   background-color: #ffffff;

@@ -27,7 +27,6 @@ const ProfileForm = ({ onSubmit, initialValues }) => {
         }
       };
 
-    
 
       const handleDefaultUser = async () => {
         try {

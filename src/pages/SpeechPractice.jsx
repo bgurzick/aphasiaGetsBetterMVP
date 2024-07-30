@@ -26,6 +26,7 @@ const SpeechPractice = () => {
   return (
     <div>
       <h1>speech practice</h1>
+      <p>hint: try clicking on each sentence!</p>
       <SentenceList userProfile={userProfile} />
     </div>
   );

@@ -21,7 +21,7 @@ const StrokeCenters = () => {
       <p>please note: this list may not be up to date.</p>
       <form onSubmit={handleSubmit}>
         <input type="text" placeholder="Type the name of your state" value={state} onChange={(e) => setState(e.target.value)} />
-        <button type="submit">submit</button>
+        <button type="submit">search</button>
       </form>
       {centers.length > 0 ? (
         <ul>

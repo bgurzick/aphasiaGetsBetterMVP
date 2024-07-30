@@ -1,4 +1,62 @@
-#root {
+@font-face {
+  font-family: 'DIN Bold';
+  src: url(../IMG/kexpInteractiveProtoFonts/DIN/DINBold.ttf);
+}
+
+
+
+
+.header {
+  background-color: #ffffff;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.header-title {
+  font-size: 32px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  padding-bottom: 10px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav li {
+  font-weight: bold;
+}
+
+nav a {
+  text-decoration: none;
+  color: #333;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.content-container {
+  flex: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -39,4 +97,4 @@
 
 .read-the-docs {
   color: #888;
-}
+} */

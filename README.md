@@ -30,3 +30,12 @@ OTHER NOTES
 - While still a work in progress, I've been thinking about accessibility the whole way through: high contrast color scheme, large print, extra line spacing and so on, for readability. As I continue to develop on-screen content, I will bear in mind the impaired visual attention of many people living with aphasia.
 
 - The user profiles have full CRUD routes built. My aim is to make it so that the user can edit their own profile information on the frontend: add friends, change cities, delete siblings (just kidding), for the benfit of the dynamic speech therapy prompts.
+
+<img width="1439" alt="Screen Shot 2024-08-29 at 11 27 20 AM" src="https://github.com/user-attachments/assets/01e0bac9-eab6-4bf3-931b-f89127c4b338">
+
+
+<img width="1429" alt="Screen Shot 2024-08-29 at 11 11 43 AM" src="https://github.com/user-attachments/assets/e4878072-de38-4d00-9e01-3cd78dc0835a">
+
+<img width="1432" alt="Screen Shot 2024-08-29 at 11 12 00 AM" src="https://github.com/user-attachments/assets/1d0934c6-7e98-4967-9cbb-40c38d92b52e">
+
+<img width="1437" alt="Screen Shot 2024-08-29 at 11 12 28 AM" src="https://github.com/user-attachments/assets/bb4ab141-3c8d-49fa-94db-e765f28b6d20">

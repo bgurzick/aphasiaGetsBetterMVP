@@ -18,7 +18,7 @@ MY 4 PAGES
 
 - Speech Practice: this page cycles through social sentence prompts and uses user data to fill the sentences with personally meaningful information, like a siblings name or the city where they live.
 
-- Stroke Centers: this page utilizes a mongoDB collection that I made myself help users identify certified stroke centers in any state. 
+- Stroke Centers: this page utilizes a mongoDB collection that I made myself to help users identify certified stroke centers in any state. 
     - The greatest fear, and an all-to-common reality for stroke survivors living with aphasia, is having another stroke. Not everyone is aware that different hospitals have different capabilities when it comes to stroke treatment. In fact, only approximately 5.5% of medical centers are considered a "Comprehensive Stroke Center" and fewer than half of U.S. states have a law that mandates receiving treated at a certified stroke center when stroke is expected.
 
 FRUSTRATIONS AND FUTURE PLANS
